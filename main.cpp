@@ -1,6 +1,5 @@
-#include <stdio.h>
 #include "bwindow.h"
-#include "agent.h"
+#include "boids.h"
 
 
 int main()
@@ -45,6 +44,13 @@ int main()
 	agent agent2 = agent(p,s);
 	printf("x = %d\n",agent2.GetPos()[0]);
 	printf("y = %d\n",agent2.GetPos()[1]);
+
+	boids myBoids = boids(myAgent);
+	printf("%d\n",myBoids.GetNb());
+	myBoids.addElement(agent2);
+	printf("%d\n",myBoids.GetNb());
+
+	//delete myBoids;
 
     return 0;
 }
